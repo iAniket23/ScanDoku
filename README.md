@@ -7,5 +7,7 @@ Django
 Typescript    
 Django-REST    
 OpenCV     
-Keras     
+numpy   
+tensorflow    
+matplotlib     
 
