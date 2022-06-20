@@ -1,5 +1,4 @@
 """backend URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
@@ -15,7 +14,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
+from rest_framework import permissions
+import sudokuScanner.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/users/', views.manageAllUser),
+    path('api/users/<int:userID>/', views.manageSingleUser),
+    path('api/sudokus/<int:userID>/', views.manageSingleSudoku),
+    path('api/images/', views.manageAllImage),
+    path('api/images/<int:imageID>', views.manageSingleImage),
 ]
